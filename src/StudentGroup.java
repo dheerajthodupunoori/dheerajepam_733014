@@ -44,10 +44,7 @@ public class StudentGroup  implements StudentArrayOperation
 		}
 		for(int i=0;i<students.length;i++)
 		{
-			this.students[i].setAvgMark(students[i].getAvgMark());
-			this.students[i].setBirthDate(students[i].getBirthDate());
-			this.students[i].setFullName(students[i].getFullName());
-			this.students[i].setId(students[i].getId());
+			this.students[i]=students[i];
 		}
 	}
 
@@ -68,21 +65,18 @@ public class StudentGroup  implements StudentArrayOperation
 	}
 
 	@Override
-	public void setStudent(Student student, int i)
+	public void setStudent(Student student, int index)
 	{
 		// Add your implementation here
 		int l;
 		l=students.length;
-		if(i < 0 || i >= l || student==null)
+		if(index < 0 || index > l || student==null)
 		{
 			throw new IllegalArgumentException();
 		}
 		else
 		{
-			this.students[i].setAvgMark(student.getAvgMark());
-			this.students[i].setBirthDate(student.getBirthDate());
-			this.students[i].setFullName(student.getFullName());
-			this.students[i].setId(student.getId());	
+			this.students[index]=student;
 		}
 	}
 
@@ -389,29 +383,16 @@ public class StudentGroup  implements StudentArrayOperation
 	}
 
 	@Override
-	public Student[] getStudentsByAge(int age) {
+	public Student[] getStudentsByAge(int age)
+	{
 		// Add your implementation here
-		
-		int cnt=0;
+		int n;
+		ArrayList<Student> al=new ArrayList<Student>();
 		for(int i=0;i<students.length;i++)
 		{
-			int age1=this.getCurrentAgeByDate(i);
-			if(age1==age)
-			{
-				cnt++;
-			}
+			
 		}
-		Student[] s=new Student[cnt];
-		cnt=0;
-		for(int i=0;i<students.length;i++)
-		{
-			int age1=this.getCurrentAgeByDate(i);
-			if(age1==age)
-			{
-				s[i]=students[i];
-			}
-		}
-		return s;
+		return null;
 	}
 
 	@Override
