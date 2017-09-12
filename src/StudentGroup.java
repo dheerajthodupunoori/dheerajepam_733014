@@ -301,45 +301,63 @@ public class StudentGroup  implements StudentArrayOperation
 	}
 
 	@Override
-	public Student[] getByBirthDate(Date date)
-	{
-		// Add your implementation here
-		ArrayList<Student> al=new ArrayList<Student>();
-		if(date==null)
-		{
+public Student[] getByBirthDate(Date date) {
+		
+		if(date == null)
 			throw new IllegalArgumentException();
-		}
-		for(int i=0;i<students.length;i++)
-		{
-			if(students[i].getBirthDate().before(date) || students[i].getBirthDate().equals(date))
+		
+			int length= 0;
+			for(int i=0;i<students.length;i++)
 			{
-				al.add(students[i]);
+				if(students[i].getBirthDate().before(date))
+				{
+					length++;
+				}
 			}
-		}
-		 Student[] students1=(Student[]) al.toArray();
-		return students1;
+			
+			Student s[] = new Student[length];
+			int k=0;
+			for(int i=0;i<students.length;i++)
+			{
+				if(students[i].getBirthDate().before(date))
+				{
+					s[k] = students[i];
+					k++;
+				}
+			}
+			
+		return s;
 	}
 
 	@Override
-	public Student[] getBetweenBirthDates(Date firstDate, Date lastDate)
-	{
+	public Student[] getBetweenBirthDates(Date firstDate, Date lastDate) {
 		// Add your implementation here
-		ArrayList<Student> al=new ArrayList<Student>();
-		if(firstDate==null || lastDate==null)
-		{
+		
+		if(firstDate == null || lastDate == null)
 			throw new IllegalArgumentException();
-		}
-		for(int i=0;i<students.length;i++)
-		{
-			if(students[i].getBirthDate().compareTo(firstDate)>0 && students[i].getBirthDate().compareTo(lastDate)<0 )	
+		
+			int length= 0;
+			for(int i=0;i<students.length;i++)
 			{
-				al.add(students[i]);
+				if(students[i].getBirthDate().after(firstDate) &&students[i].getBirthDate().before(lastDate) )
+				{
+					length++;
+				}
 			}
-		}
-		Student[] students1=(Student[]) al.toArray();
-		return students1;
+			
+			Student s[] = new Student[length];
+			int k=0;
+			for(int i=0;i<students.length;i++)
+			{
+				if(students[i].getBirthDate().after(firstDate) && students[i].getBirthDate().before(lastDate) )
+				{
+					s[k] = students[i];
+					k++;
+				}
+			}
+			
+		return s;
 	}
-
 	public static long getDifferenceDays(Date d1, Date d2) {
 	    long diff = d2.getTime() - d1.getTime();
 	    return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
