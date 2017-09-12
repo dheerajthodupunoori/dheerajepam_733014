@@ -1,45 +1,4 @@
 
-Conversation opened. 3 messages. All messages read.
-
-Skip to content
-Using Gmail with screen readers
-Click here to enable desktop notifications for Gmail.   Learn more  Hide
- 
- 
-More 
-1 of 4,471
- 
-Epam Code
-Inbox
-	x
-Lokesh Dogga
-	
-Attachments5:48 PM (12 minutes ago)
-	
-to me, tharunkumarpus.
-Attachments area
-Dheeraj Thodupunoori		Attachments5:50 PM (11 minutes ago)
----------- Forwarded message ---------- From: Lokesh Dogga <lokeshdogga1302@g...
-Dheeraj Thodupunoori <dheeraj.thodupunoori01@gmail.com>
-	
-Attachments5:50 PM (10 minutes ago)
-	
-to nishanth
-Attachments area
-	
-Click here to Reply or Forward
-3.84 GB (25%) of 15 GB used
-Manage
-Terms - Privacy
-Last account activity: 7 minutes ago
-Details
-	
-	
-2 more
-lokesh dogga's profile photo
-	lokesh dogga
-Vasavi college of engineering
-Show details
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
