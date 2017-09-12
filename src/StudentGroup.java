@@ -493,5 +493,10 @@ public class StudentGroup implements StudentArrayOperation {
 		return s;
 	}
 
-	
-}
+	@Override
+	public Student getNextStudent(Student student) {
+		if(student == null)
+			throw new IllegalArgumentException();
+		
+		return null;
+	}}
