@@ -383,24 +383,62 @@ public class StudentGroup  implements StudentArrayOperation
 	}
 
 	@Override
-	public Student[] getStudentsByAge(int age)
-	{
+	public Student[] getStudentsByAge(int age) {
 		// Add your implementation here
-		int n;
-		ArrayList<Student> al=new ArrayList<Student>();
+		
+		int cnt=0;
 		for(int i=0;i<students.length;i++)
 		{
-			
+			int age1=this.getCurrentAgeByDate(i);
+			if(age1==age)
+			{
+				cnt++;
+			}
 		}
-		return null;
+		Student[] s=new Student[cnt];
+		cnt=0;
+		for(int i=0;i<students.length;i++)
+		{
+			int age1=this.getCurrentAgeByDate(i);
+			if(age1==age)
+			{
+				s[i]=students[i];
+			}
+		}
+		return s;
 	}
 
 	@Override
-	public Student[] getStudentsWithMaxAvgMark() 
-	{
+	public Student[] getStudentsWithMaxAvgMark() {
 		// Add your implementation here
 		
-		return null;
+		
+		int cnt=0;
+		double max=students[0].getAvgMark();
+		for(int i=0;i<students.length;i++)
+		{
+			if(students[i].getAvgMark()>max)
+				max=students[i].getAvgMark();
+		}
+		for(int i=0;i<students.length;i++)
+		{
+			if(students[i].getAvgMark()==max)
+				cnt++;
+		}
+		
+		for(int i=0;i<students.length;i++)
+		{
+			if(students[i].getAvgMark()==max)
+				cnt++;
+		}
+		Student[] s=new Student[cnt];
+		cnt=0;
+		for(int i=0;i<students.length;i++)
+		{
+			s[cnt]=students[i];
+			cnt++;
+		}
+		return s;
 	}
 
 	@Override
